@@ -14,6 +14,7 @@
 		6591615D2A8719D400E76354 /* SnowSeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6591615C2A8719D400E76354 /* SnowSeekerTests.swift */; };
 		659161672A8719D400E76354 /* SnowSeekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659161662A8719D400E76354 /* SnowSeekerUITests.swift */; };
 		659161692A8719D400E76354 /* SnowSeekerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659161682A8719D400E76354 /* SnowSeekerUITestsLaunchTests.swift */; };
+		659161802A872CEC00E76354 /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = 6591617F2A872CEC00E76354 /* resorts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		659161622A8719D400E76354 /* SnowSeekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowSeekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659161662A8719D400E76354 /* SnowSeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowSeekerUITests.swift; sourceTree = "<group>"; };
 		659161682A8719D400E76354 /* SnowSeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowSeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6591617F2A872CEC00E76354 /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resorts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				6591614B2A8719D200E76354 /* SnowSeekerApp.swift */,
 				6591614D2A8719D200E76354 /* ContentView.swift */,
+				6591617F2A872CEC00E76354 /* resorts.json */,
 				6591614F2A8719D400E76354 /* Assets.xcassets */,
 				659161512A8719D400E76354 /* Preview Content */,
 			);
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659161802A872CEC00E76354 /* resorts.json in Resources */,
 				659161532A8719D400E76354 /* Preview Assets.xcassets in Resources */,
 				659161502A8719D400E76354 /* Assets.xcassets in Resources */,
 			);
