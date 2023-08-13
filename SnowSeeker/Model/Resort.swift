@@ -2,12 +2,12 @@
 //  Resort.swift
 //  SnowSeeker
 //
-//  Created by Yuga Samuel on 12/08/23.
+//  Created by Paul Hudson on 23/01/2022.
 //
 
 import Foundation
 
-struct Resort: Codable, Identifiable, Hashable {
+struct Resort: Codable, Identifiable {
     let id: String
     let name: String
     let country: String
@@ -19,7 +19,11 @@ struct Resort: Codable, Identifiable, Hashable {
     let elevation: Int
     let runs: Int
     let facilities: [String]
-    
+
+    var facilityTypes: [Facility] {
+        facilities.map(Facility.init)
+    }
+
     static let allResorts: [Resort] = Bundle.main.decode("resorts.json")
     static let example = allResorts[0]
 }
