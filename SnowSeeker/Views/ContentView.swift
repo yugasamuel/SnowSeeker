@@ -7,28 +7,24 @@
 
 import SwiftUI
 
-extension View {
-    @ViewBuilder func phoneOnlyNavigationView() -> some View {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            self.navigationViewStyle(.stack)
-        } else {
-            self
-        }
-    }
-}
-
 struct ContentView: View {
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
 
     @StateObject var favorites = Favorites()
     @State private var searchText = ""
+    
+    var filteredResorts: [Resort] {
+        if searchText.isEmpty {
+            return resorts
+        } else {
+            return resorts.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(filteredResorts) { resort in
-                NavigationLink {
-                    ResortView(resort: resort)
-                } label: {
+                NavigationLink(value: resort) {
                     HStack {
                         Image(resort.country)
                             .resizable()
@@ -58,18 +54,11 @@ struct ContentView: View {
             }
             .navigationTitle("Resorts")
             .searchable(text: $searchText, prompt: "Search for a resort")
-
-            WelcomeView()
+            .navigationDestination(for: Resort.self) { resort in
+                ResortView(resort: resort)
+            }
         }
         .environmentObject(favorites)
-    }
-
-    var filteredResorts: [Resort] {
-        if searchText.isEmpty {
-            return resorts
-        } else {
-            return resorts.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-        }
     }
 }
 
